@@ -1,6 +1,8 @@
 #include"WorkerManager.h"
-#include"employee.h"
 #include"worker.h"
+#include"employee.h"
+#include"boss.h"
+#include"manager.h"
 int main()
 {
 	WorkerManager wm;//管理员实例化
@@ -9,14 +11,6 @@ int main()
 
 	while (true)
 	{
-		//测试
-		Worker* a = NULL;
-		a = new Employee(1, "zs", 2);
-		a->showinfo();
-		
-
-
-
 		//打印菜单
 		wm.Show_Menu();
 
@@ -29,18 +23,25 @@ int main()
 			wm.ExitSystem();
 			break;
 		case 1://增加职工信息
+			wm.Add_Emp();
 			break;
 		case 2://显示职工信息
+			wm.Show_Emp();
 			break;
 		case 3://删除离职职工
+			wm.Del_Emp();
 			break;
 		case 4://修改职工信息
+			wm.Mod_Emp();
 			break;
 		case 5://查找职工信息
+			wm.Find_emp();
 			break;
 		case 6://按照编号排序
+			wm.Sort_Emp();
 			break;
 		case 7://清空所有文档
+			wm.Clean_File();
 			break;
 		default:
 			system("cls");//清屏
